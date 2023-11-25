@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="t4.css">
+        <body>
+            <div class="in">
+              <div class = "in2">Temperature convertor </div>
+              <div class="in1"> Degree:
+             <input type="text" id="input">
+             <select id="temperature">
+                <option value="0">Type:</option>
+                <option value="fahrenheit">Fahrenheit</option>
+                <option value="celsius">Celsius</option>
+             </select>
+             <div id="butto"> <button class="but" onclick="convert()">CONVERT</button> </div>
+             After conversion:
+             <div id="result"></div>
+            </div>
+        </div>
+        </body>
+        <script>
+            function convert()
+            {
+                const temperatureType = document.getElementById("temperature").value;
+            const input = parseFloat(document.getElementById("input").value);
+            let result = 0;
+
+            if (temperatureType === "celsius") {
+                result = (input * 9/5) + 32;
+                document.getElementById("result").innerHTML =`${result.toFixed(2)}°F`;
+            } else if (temperatureType === "fahrenheit") {
+                result = (input - 32) * 5/9;
+                document.getElementById("result").innerHTML = `${result.toFixed(2)}°C`;
+            }
+            }
+        </script>
+               </head>
+
+</html>
